@@ -1,0 +1,14 @@
+<!-- <ul>
+    <li *ngFor="let pais of paises">
+        {{pais.name}}, {{pais.population | number}}
+    </li>
+</ul> -->
+<div *ngIf="loading" class="row">
+    <div class="col-12 text-center">
+        <app-loading></app-loading>
+    </div>
+</div>
+<div *ngIf="error" class="alert alert-danger">
+    <h3>Error {{msgError}}</h3>
+</div>
+<app-card *ngIf="!loading" [items]="releases"></app-card>
